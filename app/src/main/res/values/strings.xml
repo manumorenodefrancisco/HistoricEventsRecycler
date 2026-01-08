@@ -4,7 +4,7 @@
     <string-array name="historic_event_names">
         <item>Revolución neolítica</item>
         <item>Fundación mítica de Roma</item>
-        <item>Inicia de la guerra del Peloponeso</item>
+        <item>Inicio de la guerra del Peloponeso</item>
         <item>Caída del Imperio Romano</item>
         <item>Invasión árabe de la Península Ibérica</item>
         <item>Primer ataque vikingo</item>
@@ -12,23 +12,22 @@
         <item>Batalla de las Navas de Tolosa</item>
         <item>Toma de Constantinopla e invención de la imprenta</item>
         <item>Conquista de Granada</item>
-        <item>LLegada de los europeos a América</item>
+        <item>Llegada de los europeos a América</item>
         <item>Las 95 tesis de Lutero</item>
         <item>Guerra de los campesinos alemanes</item>
         <item>Inicio de la Guerra de los 30 años</item>
         <item>Fin de la dinastía Ming</item>
         <item>Paz de Westfalia</item>
-        <item>Llegada de los borbones al trono hispánico</item>
+        <item>Llegada de los Borbones al trono hispánico</item>
         <item>Independencia de las 13 colonias</item>
         <item>Revolución francesa</item>
         <item>Congreso de Viena</item>
-        <item>Guerra de Crimea</item>
-        <item>Comuna de Paris</item>
+        <item>Comuna de París</item>
         <item>Revolución bolchevique</item>
-        <item>Fin I Guerra Mundial</item>
-        <item>Inicio Guerra Civil Española</item>
-        <item>Fin II Guerra Mundial</item>
-        <item>Comienzo III Guerra Mundial</item>
+        <item>Fin de la I Guerra Mundial</item>
+        <item>Inicio de la Guerra Civil Española</item>
+        <item>Fin de la II Guerra Mundial</item>
+        <item>Inicio de la III Guerra Mundial</item>
     </string-array>
     <string-array name="historic_event_dates">
         <item>9000 a.E.</item>
@@ -84,31 +83,6 @@
         <item>Europa</item>
         <item>España</item>
         <item>Mundo</item>
-        <item>Quién sabe</item><item>Anatolia</item>
-        <item>Lacio</item>
-        <item>Peloponeso</item>
-        <item>Europa</item>
-        <item>Península Ibérica</item>
-        <item>Inglaterra</item>
-        <item>Aquisgrán</item>
-        <item>Jaén</item>
-        <item>Constantinopla</item>
-        <item>Granada</item>
-        <item>América</item>
-        <item>Wittenberg</item>
-        <item>Alemania</item>
-        <item>Europa</item>
-        <item>China</item>
-        <item>Europa</item>
-        <item>Hispania</item>
-        <item>Norteamérica</item>
-        <item>Francia</item>
-        <item>Viena</item>
-        <item>París</item>
-        <item>Rusia</item>
-        <item>Europa</item>
-        <item>España</item>
         <item>Mundo</item>
-        <item>Quién sabe</item>
     </string-array>
 </resources>
