@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,7 +40,11 @@ public class MainActivity extends AppCompatActivity {
         String[] eventNames = getResources().getStringArray(R.array.historic_event_names);
         String[] eventDates = getResources().getStringArray(R.array.historic_event_dates);
         String[] eventLocations = getResources().getStringArray(R.array.historic_event_locations);
+        Random rnd = new Random(10);
 
+
+
+        //String[] eventLocations = getResources().getStringArray(R.array.historic_event_locations);
         for (int i = 0; i < eventNames.length; i++) {
             eventosHistoricos.add(new EventModel(eventNames[i], eventDates[i], eventLocations[i]));
         }

@@ -29,6 +29,7 @@
         <item>Fin de la II Guerra Mundial</item>
         <item>Inicio de la III Guerra Mundial</item>
     </string-array>
+
     <string-array name="historic_event_dates">
         <item>9000 a.E.</item>
         <item>753 a.C.</item>
