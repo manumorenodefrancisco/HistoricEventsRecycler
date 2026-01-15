@@ -39,10 +39,9 @@ public class EventosAdaptadorRV extends RecyclerView.Adapter<EventosAdaptadorRV.
     @Override
     public void onBindViewHolder(@NonNull SostenDeVistas sosten, int position) {
         sosten.tvName.setText(events.get(position).getEventName());
-        sosten.tvDate.setText(events.get(position).getEventDate());
         sosten.tvLocation.setText(events.get(position).getEventLocation());
-
-
+        sosten.tvDate.setText("????");
+        sosten.tvDate.setTag(events.get(position).getEventDate());
     }
 
     @Override
@@ -54,8 +53,9 @@ public class EventosAdaptadorRV extends RecyclerView.Adapter<EventosAdaptadorRV.
         TextView tvName, tvDate, tvLocation;
         CardView card;
         ImageView iconoLibro;
-        ImageView iconoCheck;
         ImageView iconoCross;
+        ImageView iconoCheck;
+        int fallos = 0;
 
         public SostenDeVistas(@androidx.annotation.NonNull View itemView) {
             super(itemView);
@@ -64,17 +64,9 @@ public class EventosAdaptadorRV extends RecyclerView.Adapter<EventosAdaptadorRV.
             tvLocation = itemView.findViewById(R.id.tvEventLocation);
             card = itemView.findViewById(R.id.eventCard);
             iconoLibro = itemView.findViewById(R.id.imageViewLibro);
-            iconoCheck = itemView.findViewById(R.id.imageViewCheck);
             iconoCross = itemView.findViewById(R.id.imageViewCross);
-            //String nombre = itemView.findViewById(R.id.nombreTIL);
-            //String año = itemView.findViewById(R.id.añoTIL).getText().toString();
+            iconoCheck = itemView.findViewById(R.id.imageViewCheck);
 
-        /*itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(itemView.getContext(), tvName.getText(), Toast.LENGTH_SHORT).show();
-            }
-        });*/
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -82,55 +74,46 @@ public class EventosAdaptadorRV extends RecyclerView.Adapter<EventosAdaptadorRV.
                     card.setCardBackgroundColor(
                             itemView.getResources().getColor(R.color.gray)
                     );
-                    //EventModel evento = events;
                     AlertDialog.Builder builder = new AlertDialog.Builder(itemView.getContext());
                     LayoutInflater inflater = LayoutInflater.from(itemView.getContext());
                     View alertPopUpView = inflater.inflate(R.layout.event_popup, null);
                     builder.setTitle(tvName.getText())
                             .setView(alertPopUpView)
-                            //.setMessage("¿En qué año crees que ocurrió este evento?")
                             .setPositiveButton("Continuar", (dialog, which) -> {
-                                //evento.remove(position);
-                                //evento.incrementarFallos();
 
                                 TextInputEditText fechaET = alertPopUpView.findViewById(R.id.fechaET);
-                                String userInput = fechaET.getText().toString();
+                                String fechaInput = fechaET.getText().toString();
 
-                                //TextInputLayout fechaTIL = alertPopUpView.findViewById(R.id.fechaTIL);
-                                //TextInputEditText fechaET = (TextInputEditText) fechaTIL.getEditText();
-
-                                String fecha = fechaET != null ? fechaET.getText().toString() : null;
+                                String fecha = tvDate.getTag().toString();
                                 String message;
 
-                                if (fecha.trim().equals(tvDate.getText().toString())) {
-                                    //Toast.makeText(itemView.getContext(), "Año " + fecha + " ES CORRECTO!!", Toast.LENGTH_SHORT).show();
+                                if (fechaInput.trim().equals(fecha)) {
                                     message = "ES CORRECTO";
-                                    //card.setCardBackgroundColor(itemView.getResources().getColor(R.color.verdecillo));
-                                    //iconoLibro.setColorFilter(itemView.getResources().getColor(R.color.verdecillo));
-
                                     iconoCheck.setVisibility(View.VISIBLE);
-
+                                    //iconoLibro.setColorFilter(itemView.getResources().getColor(R.color.verdecillo));
+                                    //card.setCardBackgroundColor(itemView.getResources().getColor(R.color.verdecillo));
                                 } else {
-                                    message = "Has fallado :/";
-                                    //iconoLibro.setColorFilter(itemView.getResources().getColor(R.color.rojillo));
+                                    message = "HAS FALLADO. La respuesta era: " + fecha;
                                     iconoCross.setVisibility(View.VISIBLE);
+                                    //iconoLibro.setColorFilter(itemView.getResources().getColor(R.color.rojillo));
                                     //card.setCardBackgroundColor(itemView.getResources().getColor(R.color.rojillo));
                                 }
+
+                                itemView.setOnClickListener(null);
+
                                 AlertDialog.Builder builder2 = new AlertDialog.Builder(itemView.getContext());
                                 builder2.setTitle(tvName.getText())
                                         .setMessage(message)
-                                        .setPositiveButton("Aceptar", (dialog2, which2) -> {})
-                                        .setNegativeButton("Cancelar", (dialog2, which2) -> {})
+                                        .setPositiveButton("Ok", (dialog2, which2) -> {})
+                                        //.setOnDismissListener(dialog2 -> {tvDate.setText(fecha);})
                                         .show();
-
                             })
                             .setNegativeButton("Cancelar", (dialog, which) -> {
-
                             })
                             .show();
                 }
             });
 
         }
-}
+    }
 }

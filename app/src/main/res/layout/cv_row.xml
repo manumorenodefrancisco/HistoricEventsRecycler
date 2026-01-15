@@ -9,7 +9,7 @@
         android:id="@+id/eventCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardBackgroundColor="@color/cafe"
+        app:cardBackgroundColor="@color/gray"
         android:layout_margin="10dp"
         app:cardCornerRadius="20dp"
         app:cardElevation="40dp"
@@ -50,7 +50,7 @@
                         android:textSize="18dp"
                         android:padding="8dp"
                         android:textStyle="bold"
-                        android:textColor="@color/white"
+                        android:textColor="@color/crema"
 
                         />
 
