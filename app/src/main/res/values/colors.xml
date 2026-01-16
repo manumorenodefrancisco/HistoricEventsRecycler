@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#FF000000</color>
-    <color name="gray">#666666</color>
+    <color name="marron">#8A714D</color>
     <color name="white">#FFFFFFFF</color>
     <color name="cafe">#b08968</color>
     <color name="cafe_oscuro">#6B4524</color>
-    <color name="rojo">#C3371E</color>
+    <color name="rojo">#A2543F</color>
+    <color name="rojo2">#C14B2F</color>
+    <color name="rojo3">#D5361C</color>
+    <color name="rojo4">#E42A11</color>
+    <color name="rojo5">#FF0000</color>
     <color name="verde">#357512</color>
     <color name="rojillo">#FF0000</color>
     <color name="verdecillo">#1ADB30</color>

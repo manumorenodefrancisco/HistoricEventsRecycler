@@ -7,13 +7,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
 
 import org.jspecify.annotations.NonNull;
 
@@ -31,7 +29,7 @@ public class EventosAdaptadorRV extends RecyclerView.Adapter<EventosAdaptadorRV.
     @Override
     public @NonNull SostenDeVistas onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater instanciadorXML = LayoutInflater.from(context);
-        View view = instanciadorXML.inflate(R.layout.cv_row, parent, false);
+        View view = instanciadorXML.inflate(R.layout.tarjeta, parent, false);
 
         return new SostenDeVistas(view);
     }
@@ -55,6 +53,7 @@ public class EventosAdaptadorRV extends RecyclerView.Adapter<EventosAdaptadorRV.
         ImageView iconoLibro;
         ImageView iconoCross;
         ImageView iconoCheck;
+        TextView tvfallos;
         int fallos = 0;
 
         public SostenDeVistas(@androidx.annotation.NonNull View itemView) {
@@ -66,14 +65,12 @@ public class EventosAdaptadorRV extends RecyclerView.Adapter<EventosAdaptadorRV.
             iconoLibro = itemView.findViewById(R.id.imageViewLibro);
             iconoCross = itemView.findViewById(R.id.imageViewCross);
             iconoCheck = itemView.findViewById(R.id.imageViewCheck);
-
+            tvfallos = itemView.findViewById(R.id.tvfallos);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    card.setCardBackgroundColor(
-                            itemView.getResources().getColor(R.color.gray)
-                    );
+                    //card.setCardBackgroundColor(itemView.getResources().getColor(R.color.marron));
                     AlertDialog.Builder builder = new AlertDialog.Builder(itemView.getContext());
                     LayoutInflater inflater = LayoutInflater.from(itemView.getContext());
                     View alertPopUpView = inflater.inflate(R.layout.event_popup, null);
@@ -90,16 +87,29 @@ public class EventosAdaptadorRV extends RecyclerView.Adapter<EventosAdaptadorRV.
                                 if (fechaInput.trim().equals(fecha)) {
                                     message = "ES CORRECTO";
                                     iconoCheck.setVisibility(View.VISIBLE);
-                                    //iconoLibro.setColorFilter(itemView.getResources().getColor(R.color.verdecillo));
-                                    //card.setCardBackgroundColor(itemView.getResources().getColor(R.color.verdecillo));
+                                    //card.setVisibility(View.INVISIBLE);
+                                    //itemView.setVisibility(View.INVISIBLE);
+                                    card.removeAllViews();
                                 } else {
                                     message = "HAS FALLADO. La respuesta era: " + fecha;
+                                    fallos++;
+                                    tvfallos.setVisibility(View.VISIBLE);
+                                    tvfallos.setText(String.valueOf(fallos));
                                     iconoCross.setVisibility(View.VISIBLE);
                                     //iconoLibro.setColorFilter(itemView.getResources().getColor(R.color.rojillo));
-                                    //card.setCardBackgroundColor(itemView.getResources().getColor(R.color.rojillo));
+                                    if (fallos ==1) {
+                                        card.setCardBackgroundColor(itemView.getResources().getColor(R.color.rojo));
+                                    } else if (fallos ==2) {
+                                        card.setCardBackgroundColor(itemView.getResources().getColor(R.color.rojo2));
+                                    } else if (fallos==3) {
+                                        card.setCardBackgroundColor(itemView.getResources().getColor(R.color.rojo3));
+                                    } else if (fallos==4) {
+                                        card.setCardBackgroundColor(itemView.getResources().getColor(R.color.rojo4));
+                                    } else if (fallos>=5) {
+                                        card.setCardBackgroundColor(itemView.getResources().getColor(R.color.rojo5));
+                                    }
                                 }
-
-                                itemView.setOnClickListener(null);
+                                //itemView.setOnClickListener(null);
 
                                 AlertDialog.Builder builder2 = new AlertDialog.Builder(itemView.getContext());
                                 builder2.setTitle(tvName.getText())
