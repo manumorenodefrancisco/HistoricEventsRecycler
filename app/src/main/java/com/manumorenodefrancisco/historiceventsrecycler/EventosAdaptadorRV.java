@@ -103,10 +103,8 @@ public class EventosAdaptadorRV extends RecyclerView.Adapter<EventosAdaptadorRV.
                                         card.setCardBackgroundColor(itemView.getResources().getColor(R.color.rojo2));
                                     } else if (fallos==3) {
                                         card.setCardBackgroundColor(itemView.getResources().getColor(R.color.rojo3));
-                                    } else if (fallos==4) {
+                                    } else if (fallos>=4) {
                                         card.setCardBackgroundColor(itemView.getResources().getColor(R.color.rojo4));
-                                    } else if (fallos>=5) {
-                                        card.setCardBackgroundColor(itemView.getResources().getColor(R.color.rojo5));
                                     }
                                 }
                                 //itemView.setOnClickListener(null);

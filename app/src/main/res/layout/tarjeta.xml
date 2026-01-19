@@ -10,7 +10,7 @@
         android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardBackgroundColor="@color/marron"
+        app:cardBackgroundColor="#AD9F8D"
         android:layout_margin="10dp"
         app:cardCornerRadius="12dp"
         app:cardElevation="40dp"
@@ -52,7 +52,7 @@
                         android:textSize="18dp"
                         android:padding="8dp"
                         android:textStyle="bold"
-                        android:textColor="@color/crema"
+                        android:textColor="#333333"
 
                         />
 
@@ -70,7 +70,7 @@
                             android:layout_marginTop="0dp"
                             android:layout_weight="1"
                             android:text="100 a.C."
-                            android:textColor="@color/crema" />
+                            android:textColor="#333333" />
 
                         <TextView
                             android:id="@+id/tvEventLocation"
@@ -78,7 +78,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="Localización"
-                            android:textColor="@color/crema" />
+                            android:textColor="#333333" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -88,7 +88,7 @@
             <ImageView
                 android:id="@+id/imageViewCross"
                 android:layout_width="70dp"
-                android:layout_height="52dp"
+                android:layout_height="45dp"
                 android:layout_gravity="end|bottom"
                 android:layout_marginEnd="11dp"
                 android:visibility="invisible"
@@ -105,13 +105,13 @@
             <TextView
                 android:id="@+id/tvfallos"
                 android:text="0"
-                android:textColor="@color/black"
-                android:textSize="27sp"
+                android:textColor="@color/white"
+                android:textSize="25sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end|bottom"
-                android:layout_marginEnd="11dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="14dp"
+                android:layout_marginBottom="6dp"
                 android:visibility="invisible" />
         </FrameLayout>
 
